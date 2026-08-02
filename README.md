@@ -124,18 +124,13 @@ scripts/               # 开发端口探测与清理
 
 ## 部署（Netlify）
 
-仓库已配置 [`netlify.toml`](./netlify.toml)。连接 GitHub 仓库 `SherlockMF/rolefit` 后，Netlify 会自动用 `npm run build` 部署 Next.js App Router。
+线上地址：**https://rolefit-254.netlify.app**
 
-默认环境变量为 `LLM_PROVIDER=mock`（无需 Key 即可完整体验）。接真实模型时，在 Netlify → Site configuration → Environment variables 设置：
+- 配置：[`netlify.toml`](./netlify.toml)
+- 自动发布：推送 `main` → [GitHub Actions](./.github/workflows/deploy-netlify.yml) → Netlify
+- 后台：https://app.netlify.com/projects/rolefit-254
 
-```env
-LLM_PROVIDER=compatible
-LLM_API_KEY=你的密钥
-LLM_BASE_URL=https://open.bigmodel.cn/api/paas/v4
-LLM_MODEL=glm-5.1
-NEXT_PUBLIC_LLM_PROVIDER=compatible
-NEXT_PUBLIC_LLM_MODEL=glm-5.1
-```
+默认 `LLM_PROVIDER=mock`（无需 Key）。接真实模型时，在 Netlify → Environment variables 或 GitHub Secrets 对应环境里设置 `LLM_*` / `NEXT_PUBLIC_LLM_*`。
 
 ## 原则
 
