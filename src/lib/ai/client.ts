@@ -56,11 +56,13 @@ class OpenAICompatibleClient implements LLMClient {
   private apiKey: string;
   private baseUrl: string;
   private model: string;
+  private isDeepSeek: boolean;
 
   constructor(apiKey: string, baseUrl: string, model: string) {
     this.apiKey = apiKey;
     this.baseUrl = normalizeBaseUrl(baseUrl);
     this.model = model;
+    this.isDeepSeek = /deepseek\.com/i.test(this.baseUrl);
   }
 
   async complete(
@@ -71,11 +73,17 @@ class OpenAICompatibleClient implements LLMClient {
       model: this.model,
       messages,
       temperature: options?.temperature ?? 0.4,
+      // Netlify 函数时限较短；结构化输出无需过大 completion
       max_tokens: options?.maxTokens ?? 4096,
     };
 
     if (options?.jsonMode) {
       body.response_format = { type: "json_object" };
+    }
+
+    // DeepSeek V4 默认开启 thinking，会把 token 耗在 reasoning 上且极易超时
+    if (this.isDeepSeek) {
+      body.thinking = { type: "disabled" };
     }
 
     const response = await fetch(`${this.baseUrl}/chat/completions`, {
@@ -107,7 +115,7 @@ class OpenAICompatibleClient implements LLMClient {
     const content = message?.content?.trim();
     if (content) return content;
 
-    // 智谱 GLM 开启思考时，正文可能在 reasoning_content，此处作兜底
+    // 智谱等模型偶发把正文放在 reasoning_content
     const reasoning = message?.reasoning_content?.trim();
     if (reasoning) return reasoning;
 

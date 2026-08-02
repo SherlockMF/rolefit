@@ -28,7 +28,7 @@ async function callJson<T>(
       { role: "system", content: system },
       { role: "user", content: user },
     ],
-    { temperature: 0.4, maxTokens: 6000, jsonMode: true },
+    { temperature: 0.4, maxTokens: 4000, jsonMode: true },
   );
   return parseAiJson(raw, schema);
 }

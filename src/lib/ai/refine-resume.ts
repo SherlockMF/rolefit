@@ -17,7 +17,7 @@ export async function refineResume(input: RefineRequest): Promise<RefineResponse
       { role: "system", content: system },
       { role: "user", content: user },
     ],
-    { temperature: 0.35, maxTokens: 8000, jsonMode: true },
+    { temperature: 0.35, maxTokens: 4500, jsonMode: true },
   );
 
   const parsed = parseAiJson(raw, refineResponseSchema);
