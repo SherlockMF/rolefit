@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ApplicationKanban } from "@/components/applications/application-kanban";
 import { ButtonLink } from "@/components/ui/button";
@@ -23,7 +22,7 @@ export default function ApplicationsPage() {
               在优化页终稿完成后可一键加入；在此用下拉框更新状态并记录备注
             </p>
           </div>
-          <ButtonLink render={<Link href="/optimizer" />}>去优化简历</ButtonLink>
+          <ButtonLink href="/optimizer">去优化简历</ButtonLink>
         </div>
 
         <ApplicationKanban

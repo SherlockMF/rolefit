@@ -1,5 +1,9 @@
+"use client"
+
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
+import Link from "next/link"
+import type { ComponentProps } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -55,17 +59,18 @@ function Button({
   )
 }
 
-/** 与 Next.js Link 等 `<a>` 搭配时使用，避免 nativeButton 警告 */
+/** 样式化的 Next.js Link，避免 Base UI Button + render 造成错误 role / 交互异常 */
 function ButtonLink({
   className,
   variant = "default",
   size = "default",
+  prefetch = false,
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ComponentProps<typeof Link> & VariantProps<typeof buttonVariants>) {
   return (
-    <ButtonPrimitive
-      nativeButton={false}
+    <Link
       data-slot="button"
+      prefetch={prefetch}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />

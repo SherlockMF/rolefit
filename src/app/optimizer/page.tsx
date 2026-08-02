@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -601,7 +600,7 @@ function OptimizerPageContent() {
                   终稿已就绪，可加入投递看板跟踪进度
                 </p>
                 {addedToBoard ? (
-                  <ButtonLink variant="outline" size="sm" render={<Link href="/applications" />}>
+                  <ButtonLink variant="outline" size="sm" href="/applications">
                     <Kanban className="size-3.5" />
                     已加入 · 去看板
                   </ButtonLink>

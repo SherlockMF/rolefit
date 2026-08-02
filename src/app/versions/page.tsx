@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { GitCompare, Pin, Trash2 } from "lucide-react";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Button, ButtonLink } from "@/components/ui/button";
@@ -70,7 +69,7 @@ export default function VersionsPage() {
               <GitCompare className="size-4" />
               对比选中 2 个
             </Button>
-            <ButtonLink render={<Link href="/optimizer" />}>去优化简历</ButtonLink>
+            <ButtonLink href="/optimizer">去优化简历</ButtonLink>
           </div>
         </div>
 

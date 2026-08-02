@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { ExternalLink, Trash2 } from "lucide-react";
 import {
   DndContext,
@@ -275,7 +274,7 @@ function AppCard({
             variant="outline"
             size="sm"
             className="h-7 w-full text-xs"
-            render={<Link href={`/optimizer?historyId=${app.historyId}`} />}
+            href={`/optimizer?historyId=${app.historyId}`}
           >
             <ExternalLink className="size-3" />
             打开优化记录

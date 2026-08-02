@@ -15,19 +15,19 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
-          <ButtonLink variant="ghost" size="sm" render={<Link href="/" />}>
+          <ButtonLink href="/" variant="ghost" size="sm">
             首页
           </ButtonLink>
-          <ButtonLink variant="ghost" size="sm" render={<Link href="/versions" />}>
+          <ButtonLink href="/versions" variant="ghost" size="sm">
             岗位版本
           </ButtonLink>
-          <ButtonLink variant="ghost" size="sm" render={<Link href="/applications" />}>
+          <ButtonLink href="/applications" variant="ghost" size="sm">
             投递看板
           </ButtonLink>
-          <ButtonLink variant="ghost" size="sm" render={<Link href="/changelog" />}>
+          <ButtonLink href="/changelog" variant="ghost" size="sm">
             更新说明
           </ButtonLink>
-          <ButtonLink size="sm" render={<Link href="/optimizer" />}>
+          <ButtonLink href="/optimizer" size="sm">
             开始优化
           </ButtonLink>
         </nav>

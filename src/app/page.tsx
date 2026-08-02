@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowRight,
   ClipboardCheck,
@@ -75,11 +74,7 @@ export default function HomePage() {
               AI 简历工作台，而非一次性润色工具。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink
-                size="lg"
-                className="h-10 px-5"
-                render={<Link href="/optimizer" />}
-              >
+              <ButtonLink href="/optimizer" size="lg" className="h-10 px-5">
                 开始匹配诊断
                 <ArrowRight />
               </ButtonLink>
