@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "对岗 | 提高面试转化率的转行简历工作台",
+  title: "RoleFit | Resume matching for career switchers",
   description:
-    "对岗：面向转行求职者的 AI 简历工作台，岗位匹配诊断、量化追问、投递看板与多岗位版本管理。",
+    "RoleFit: AI resume workspace for career switchers — JD match diagnosis, quantified follow-ups, outreach, and application tracking.",
 };
 
 export default function RootLayout({

@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(120,120,120,0.08),transparent)]" />
           <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
             <p className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground">
-              对岗 · 面向转行求职者 · 示例：城市规划师 → AI 产品经理
+              RoleFit · 面向转行求职者 · 示例：城市规划师 → AI 产品经理
             </p>
             <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.1]">
               不是把简历写得更漂亮，

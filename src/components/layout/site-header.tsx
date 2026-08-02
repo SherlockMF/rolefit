@@ -7,9 +7,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2 text-sm font-medium">
           <span className="flex h-7 w-7 items-center justify-center rounded-md border border-border bg-muted text-xs font-semibold">
-            对
+            RF
           </span>
-          <span className="text-foreground">对岗</span>
+          <span className="text-foreground">RoleFit</span>
           <span className="hidden text-[10px] text-muted-foreground sm:inline">
             v0.4
           </span>
