@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Deploy to Netlify
-        run: npx netlify-cli deploy --build --prod --message "GitHub Actions ${{ github.sha }}"
+        run: npx netlify-cli deploy --build --prod --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" --message "GitHub Actions ${{ github.sha }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
